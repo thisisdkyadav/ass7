@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font: 400 16px 'Roboto', sans-serif;
+
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        border-radius: 25px;
+        box-shadow: 0px 5px 20px 2px #33337224;
+    }
+
+    .form .top {
+        padding: 36px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        font-size: 20px;
+    }
+
+    .form .middle {
+        margin: 0px 36px 10px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-input {
+        width: 100%;
+        margin: 10px 0px;
+        padding: 16px;
+        border-radius: 12px;
+        border: none;
+        background-color: #f0f6ff;
+    }
+
+    .form .bottom {
+        margin: 0px 36px 24px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .form .bottom .button {
+        padding: 16px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form .bottom a {
+        text-decoration: none;
+        color: rgb(21, 14, 72);
+    }
+
+    .form .bottom .submit {
+        background-color: rgb(121, 130, 255);
+        color: white;
+    }
+
+
+    .flash-error {
+        color: red;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <div class="form">
+        <form action="{{ url_for('login') }}" method="POST">
+
+            <div class="top">
+                Account Login
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-error">
+                {% for category, message in messages %}
+                {% if category == 'error' %}
+                {{ message }}
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <div class="middle">
+                <input type="text" name="user_id" id="user_id" class="form-input" placeholder="User Id">
+                <input type="password" name="password" id="password" class="form-input" placeholder="Password">
+            </div>
+
+            <div class="bottom">
+                <input type="submit" class="button submit"></input>
+                <a href="{{ url_for('register') }}" class="button change">Don't have an account? Register</a>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

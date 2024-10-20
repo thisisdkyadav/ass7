@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            text-align: left;
+            font-weight: 200;
+        }
+
+        table th,
+        table td {
+            border-bottom: 1px solid #85adf3;
+            padding: 12px;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+
+        .top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 50px;
+        }
+
+        .left {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 20px;
+            gap: 50px;
+        }
+
+        .top img {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .button {
+            padding: 16px;
+            border-radius: 1200px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(27, 19, 135);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="left">
+            <img src="https://www.iiti.ac.in/public/themes/iitindore/demos/update-logo.png" alt="">
+            <h1>Welcome to IIT Indore</h1>
+        </div>
+        <div class="right">
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+    </div>
+
+    <h1>BTech CSE Courses @IIT Indore</h1>
+
+    <table>
+        <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>L-P-T</th>
+            <th>Credit</th>
+        </tr>
+        <tr>
+            <td>CS 103</td>
+            <td>Computer Programming</td>
+            <td>2-0-0</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>CS 153</td>
+            <td>Computer Programming Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 201</td>
+            <td>Discrete Mathematical Structures</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 202</td>
+            <td>Automata Theory and Logic</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 203</td>
+            <td>Data Structure and Algorithms</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 253</td>
+            <td>Data Structure and Algorithms Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 204</td>
+            <td>Design and Analysis of Algorithms</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 254</td>
+            <td>Design and Analysis of Algorithms Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 206</td>
+            <td>Login Design</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 206</td>
+            <td>Login Design Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 207</td>
+            <td>Database and Information System</td>
+            <td>3-0-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 357</td>
+            <td>Database and Information System Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 208</td>
+            <td>Software Engineering</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 258</td>
+            <td>Software Engineering Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 302</td>
+            <td>Computer Graphics and Visualization</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 352</td>
+            <td>Computer Graphics and Visualization Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 304N</td>
+            <td>Computer Intelligence</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 354N</td>
+            <td>Computer Intelligence Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>CS 306</td>
+            <td>Computer Networks</td>
+            <td>2-1-0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CS 356</td>
+            <td>Computer Networks Lab</td>
+            <td>0-0-3</td>
+            <td>1.5</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
